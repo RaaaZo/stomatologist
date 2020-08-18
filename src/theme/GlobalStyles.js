@@ -12,8 +12,8 @@ const GlobalStyles = createGlobalStyle`
 
 body {
     font-family: 'Oswald', sans-serif;
-    width:100%;
-    height:100%;
+    overflow-x: hidden;
+    background-color: #FAFAF6;
 }
 `;
 

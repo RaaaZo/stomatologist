@@ -1,22 +1,35 @@
 import React from "react";
 import styled from "styled-components";
 
-import BackgroundSvg from "assets/svg/menu-background.svg";
+import BackgroundSvgNotebook from "assets/svg/menu-background-notebook.svg";
+import BackgroundSvgMobile from "assets/svg/menu-background-mobile.svg";
 
-const Wrapper = styled.div`
+const StyledSvg = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: url(${BackgroundSvg});
+  height: 100vh;
+  background: url(${BackgroundSvgMobile});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  z-index: -1;
+
+  @media (min-width: 650px) {
+    background: url(${BackgroundSvgNotebook});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 `;
 
 const Background = () => {
-  return <Wrapper></Wrapper>;
+  return (
+    <>
+      <StyledSvg />
+    </>
+  );
 };
 
 export default Background;
