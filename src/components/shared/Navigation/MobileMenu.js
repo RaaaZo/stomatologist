@@ -8,10 +8,15 @@ const Wrapper = styled.div`
   right: 5%;
   width: 50px;
   height: 40px;
+  padding: 10px;
   border: 2px solid ${({ theme }) => theme.text};
   z-index: 999;
   transition: border 0.6s linear;
   cursor: pointer;
+
+  @media (orientation: landscape) {
+    top: 5%;
+  }
 
   @media (min-width: 1024px) {
     display: none;

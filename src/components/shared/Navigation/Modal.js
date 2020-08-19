@@ -13,6 +13,10 @@ const ModalWrapper = styled.div`
   transition: transform 1s 0.2s ease-in-out;
   z-index: 900;
 
+  @media (orientation: landscape) {
+    transform: translateY(-110%);
+  }
+
   @media (min-width: 1024px) {
     display: none;
   }
@@ -21,6 +25,10 @@ const ModalWrapper = styled.div`
     isOpen &&
     css`
       transform: translateX(0);
+
+      @media (orientation: landscape) {
+        transform: translateY(0);
+      }
     `}
 `;
 

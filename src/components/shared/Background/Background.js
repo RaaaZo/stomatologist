@@ -5,7 +5,7 @@ import BackgroundSvgNotebook from "assets/svg/menu-background-notebook.svg";
 import BackgroundSvgMobile from "assets/svg/menu-background-mobile.svg";
 
 const StyledSvg = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

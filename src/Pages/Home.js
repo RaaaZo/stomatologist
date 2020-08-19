@@ -1,49 +1,15 @@
 import React from "react";
 import HomeAnimation from "components/HomePage/HomeAnimation";
-import PageTitle from "components/HomePage/PageTitle";
+import PageTitle from "components/shared/PageTitle/PageTitle";
 import HomeText from "components/HomePage/HomeText";
-import styled from "styled-components";
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: 30px;
-
-  @media (min-width: 1024px) {
-    overflow: hidden;
-  }
-`;
-
-const InnerWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  @media (min-width: 660px) and (orientation: landscape) {
-    margin-top: 40px;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  @media (min-width: 1024px) and (orientation: landscape) {
-    margin-top: 80px;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  @media (min-width: 1440px) and (orientation: landscape) {
-    margin-top: 100px;
-    flex-direction: row;
-    align-items: center;
-  }
-`;
+import { PageWrapper } from "components/shared/PageWrapper/PageWrapper";
+import { ContentWrapper } from "components/shared/ContentWrapper/ContentWrapper";
 
 const Home = () => {
   return (
-    <Wrapper>
+    <PageWrapper>
       <PageTitle>Nazwa gabinetu</PageTitle>
-      <InnerWrapper>
+      <ContentWrapper>
         <HomeText>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam
           delectus, eveniet molestiae nobis est recusandae perferendis amet
@@ -53,8 +19,8 @@ const Home = () => {
           accusamus doloribus perspiciatis corrupti mollitia ab esse quia quas.
         </HomeText>
         <HomeAnimation />
-      </InnerWrapper>
-    </Wrapper>
+      </ContentWrapper>
+    </PageWrapper>
   );
 };
 

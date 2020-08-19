@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   height: 10vh;
 
   @media (min-width: 1024px) {
-    display: fixed;
+    display: flex;
     justify-content: space-between;
     align-items: center;
   }

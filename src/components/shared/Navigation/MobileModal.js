@@ -15,6 +15,10 @@ const Modal = styled.div`
   z-index: 990;
   transition: transform 1s 0.2s ease-in-out;
 
+  @media (orientation: landscape) {
+    transform: translateY(-110%);
+  }
+
   @media (min-width: 1024px) {
     display: none;
   }
@@ -23,6 +27,10 @@ const Modal = styled.div`
     isOpen &&
     css`
       transform: translateX(0);
+
+      @media (orientation: landscape) {
+        transform: translateY(0);
+      }
     `}
 `;
 
@@ -36,8 +44,9 @@ const LinksWrapper = styled.div`
 `;
 
 const StyledNavLinks = styled(NavLink)`
-  font-size: ${({ theme }) => theme.fontSize.m};
+  margin-top: 30px;
   padding: 30px 40px;
+  font-size: ${({ theme }) => theme.fontSize.m};
   color: ${({ theme }) => theme.white};
   text-decoration: none;
 `;

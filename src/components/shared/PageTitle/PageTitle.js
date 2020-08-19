@@ -3,7 +3,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const StyledHeader = styled.h3`
-  margin-top: 60px;
+  margin-top: 80px;
   margin-right: 15%;
   font-size: ${({ theme }) => theme.fontSize.m};
   color: ${({ theme }) => theme.text};

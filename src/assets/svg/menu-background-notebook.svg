@@ -1,5 +1,5 @@
 <svg width="1440" height="898" viewBox="0 0 1440 898" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="menu-background" clip-path="url(#clip0)">
+<g id="menu-background" clip-path="url(#clip1)">
 <rect width="1440" height="899" transform="translate(0 -1)" fill="#FAFAF6"/>
 <g id="top">
 <g id="fifth-vector">
@@ -16,6 +16,20 @@
 </g>
 <g id="first-vector">
 <path id="Vector_5" opacity="0.4" d="M0 -1V414.012C240 290.146 480 222.419 720 210.831C960 199.244 1200 100.46 1440 -85.5189V-1H0Z" fill="url(#paint4_linear)"/>
+</g>
+</g>
+<g id="bottom">
+<g id="fifth-vector_2">
+<path id="Vector_6" opacity="0.4" d="M1633.5 1090.33L1633.5 562.458C1369.5 719.099 1105.5 802.657 841.5 813.131C577.5 823.605 313.5 864.157 49.5 934.787V1090.33H1633.5Z" fill="url(#paint5_linear)"/>
+</g>
+<g id="third-vector_2">
+<path id="Vector_7" opacity="0.4" d="M1710 947.552L1710 562.458C1470 672.493 1230 740.155 990 765.443C750 790.73 510 863.885 270 984.907V947.552L1710 947.552Z" fill="url(#paint6_linear)"/>
+</g>
+<g id="first-vector_2">
+<path id="Vector_8" opacity="0.4" d="M1606.5 952.145L1606.5 537.134C1366.5 661 1126.5 728.726 886.5 740.314C646.5 751.902 406.5 850.685 166.5 1036.66V952.145H1606.5Z" fill="url(#paint7_linear)"/>
+</g>
+<g id="second-vector_2">
+<path id="Vector_9" opacity="0.4" d="M1710 981.74L1710 568.789C1470 618.177 1230 657.574 990 686.979C750 716.383 510 827.359 270 1019.9V981.74L1710 981.74Z" fill="url(#paint8_linear)"/>
 </g>
 </g>
 </g>
