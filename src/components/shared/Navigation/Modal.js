@@ -10,7 +10,7 @@ const ModalWrapper = styled.div`
   height: 100%;
   background-color: rgba(0, 0, 0, 0.25);
   transform: translateX(110%);
-  transition: transform 1s 0.2s ease-in-out;
+  transition: transform 0.4s 0.2s ease-in-out;
   z-index: 900;
 
   @media (orientation: landscape) {

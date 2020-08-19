@@ -1,6 +1,6 @@
 import React from "react";
 import HomeAnimation from "components/HomePage/HomeAnimation";
-import PageTitle from "components/shared/PageTitle/PageTitle";
+import { PageTitle } from "components/shared/PageTitle/PageTitle";
 import HomeText from "components/HomePage/HomeText";
 import { PageWrapper } from "components/shared/PageWrapper/PageWrapper";
 import { ContentWrapper } from "components/shared/ContentWrapper/ContentWrapper";

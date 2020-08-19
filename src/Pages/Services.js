@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import PageTitle from "components/shared/PageTitle/PageTitle";
+import { PageTitle } from "components/shared/PageTitle/PageTitle";
 import { PageWrapper } from "components/shared/PageWrapper/PageWrapper";
 import { ContentWrapper } from "components/shared/ContentWrapper/ContentWrapper";
 import { StyledButtons } from "components/ServicesPage/ServicesButtons";

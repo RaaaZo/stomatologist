@@ -13,7 +13,7 @@ const Modal = styled.div`
   background: linear-gradient(180deg, #3d6cb9 0%, #00d1ff 100%);
   box-shadow: -8px 0px 14px -1px rgba(0, 0, 0, 0.75);
   z-index: 990;
-  transition: transform 1s 0.2s ease-in-out;
+  transition: transform 0.4s 0.2s ease-in-out;
 
   @media (orientation: landscape) {
     transform: translateY(-110%);

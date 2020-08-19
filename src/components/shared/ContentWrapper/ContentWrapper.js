@@ -13,7 +13,6 @@ export const ContentWrapper = styled.div`
 
   @media (min-width: 1024px) and (orientation: landscape) {
     margin-top: 80px;
-    margin-left: 80px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;

@@ -25,7 +25,8 @@ export const StyledButtons = styled.button`
   }
 
   @media (min-width: 1440px) {
-    padding: 15px 100px;
+    margin-top: 10px;
+    padding: 25px 120px;
   }
 
   ${({ toService }) =>
@@ -33,6 +34,8 @@ export const StyledButtons = styled.button`
     css`
       width: 60%;
       margin-bottom: 15px;
+      text-align: center;
+      text-decoration: none;
 
       @media (min-width: 660px) {
         width: 40%;

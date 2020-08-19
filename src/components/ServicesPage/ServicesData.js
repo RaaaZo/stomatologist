@@ -1,56 +1,40 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import ServicesImg from "assets/images/services.jpg";
 import ServicesImg1 from "assets/images/services1.jpg";
 import ServicesImg2 from "assets/images/services2.jpg";
+
 import { ServicesWrapper } from "./ServicesWrapper";
 import { StyledImg } from "./StyledImg";
 import { StyledParagraph } from "components/shared/StyledParagraph/StyledParagraph";
 import { StyledButtons } from "./ServicesButtons";
-
-import { ReactComponent as ChooseOneSvg } from "assets/svg/chooseOne.svg";
-import styled from "styled-components";
+import ServicesAnimation from "./ServicesAnimation";
 
 const DUMMY_DATA = [
   {
     id: 1,
+    name: "Usługa1",
     img: ServicesImg,
     txt:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a doloribus optio numquam totam. Quis facilis natus ipsum! Maiores repudiandae dolor dolorum natus exercitationem, itaque iusto perferendis illo non necessitatibus!"
   },
   {
     id: 2,
+    name: "Usługa2",
     img: ServicesImg1,
     txt:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a doloribus optio numquam totam. Quis facilis natus ipsum! Maiores repudiandae dolor dolorum natus exercitationem, itaque iusto perferendis illo non necessitatibus!"
   },
   {
     id: 3,
+    name: "Usługa3",
     img: ServicesImg2,
     txt:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a doloribus optio numquam totam. Quis facilis natus ipsum! Maiores repudiandae dolor dolorum natus exercitationem, itaque iusto perferendis illo non necessitatibus!"
   }
 ];
-
-const StyledChooseOne = styled(ChooseOneSvg)`
-  margin-left: 20px;
-  width: 250px;
-  height: 100%;
-
-  @media (min-width: 660px) {
-    margin: 0 auto;
-    width: 400px;
-  }
-
-  @media (min-width: 1024px) {
-    width: 600px;
-    height: 650px;
-  }
-
-  @media (min-width: 1440px) {
-    max-width: 1024px;
-  }
-`;
 
 const ServicesData = ({ firstData, secondData, thirdData }) => {
   if (firstData) {
@@ -58,7 +42,13 @@ const ServicesData = ({ firstData, secondData, thirdData }) => {
       <ServicesWrapper key={DUMMY_DATA[0].id}>
         <StyledImg src={DUMMY_DATA[0].img} alt="zdjecie" />
         <StyledParagraph>{DUMMY_DATA[0].txt}</StyledParagraph>
-        <StyledButtons toService>Zobacz więcej</StyledButtons>
+        <StyledButtons
+          as={Link}
+          to={`/services/${DUMMY_DATA[0].name}`}
+          toService
+        >
+          Zobacz więcej
+        </StyledButtons>
       </ServicesWrapper>
     );
   }
@@ -68,7 +58,13 @@ const ServicesData = ({ firstData, secondData, thirdData }) => {
       <ServicesWrapper key={DUMMY_DATA[1].id}>
         <StyledImg src={DUMMY_DATA[1].img} alt="zdjecie" />
         <StyledParagraph>{DUMMY_DATA[1].txt}</StyledParagraph>
-        <StyledButtons toService>Zobacz więcej</StyledButtons>
+        <StyledButtons
+          as={Link}
+          to={`/services/${DUMMY_DATA[1].name}`}
+          toService
+        >
+          Zobacz więcej
+        </StyledButtons>
       </ServicesWrapper>
     );
   }
@@ -78,16 +74,28 @@ const ServicesData = ({ firstData, secondData, thirdData }) => {
       <ServicesWrapper key={DUMMY_DATA[2].id}>
         <StyledImg src={DUMMY_DATA[2].img} alt="zdjecie" />
         <StyledParagraph>{DUMMY_DATA[2].txt}</StyledParagraph>
-        <StyledButtons toService>Zobacz więcej</StyledButtons>
+        <StyledButtons
+          as={Link}
+          to={`/services/${DUMMY_DATA[2].name}`}
+          toService
+        >
+          Zobacz więcej
+        </StyledButtons>
       </ServicesWrapper>
     );
   }
 
   return (
     <>
-      <StyledChooseOne />
+      <ServicesAnimation />
     </>
   );
+};
+
+ServicesData.propTypes = {
+  firstData: PropTypes.bool.isRequired,
+  secondData: PropTypes.bool.isRequired,
+  thirdData: PropTypes.bool.isRequired
 };
 
 export default ServicesData;

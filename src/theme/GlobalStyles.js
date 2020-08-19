@@ -11,6 +11,8 @@ const GlobalStyles = createGlobalStyle`
 
 
 body {
+    max-width: 1920px;
+    margin: 0 auto;
     font-family: 'Oswald', sans-serif;
     overflow-x: hidden;
     background-color: #FAFAF6;
