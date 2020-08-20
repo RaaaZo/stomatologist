@@ -49,6 +49,10 @@ const StyledNavLinks = styled(NavLink)`
   font-size: ${({ theme }) => theme.fontSize.m};
   color: ${({ theme }) => theme.white};
   text-decoration: none;
+
+  &.activeLink {
+    color: ${({ theme }) => theme.text};
+  }
 `;
 
 const MobileModal = ({ isOpen, setIsOpen }) => {
@@ -59,13 +63,28 @@ const MobileModal = ({ isOpen, setIsOpen }) => {
   return (
     <Modal isOpen={isOpen}>
       <LinksWrapper>
-        <StyledNavLinks onClick={modalHandler} to="/">
+        <StyledNavLinks
+          exact
+          activeClassName="activeLink"
+          onClick={modalHandler}
+          to="/"
+        >
           Home
         </StyledNavLinks>
-        <StyledNavLinks onClick={modalHandler} to="/services">
+        <StyledNavLinks
+          exact
+          activeClassName="activeLink"
+          onClick={modalHandler}
+          to="/services"
+        >
           Usługi
         </StyledNavLinks>
-        <StyledNavLinks onClick={modalHandler} to="/contact">
+        <StyledNavLinks
+          exact
+          activeClassName="activeLink"
+          onClick={modalHandler}
+          to="/contact"
+        >
           Kontakt
         </StyledNavLinks>
       </LinksWrapper>

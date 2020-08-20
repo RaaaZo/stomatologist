@@ -8,6 +8,6 @@ export const ButtonsWrapper = styled.div`
   align-items: center;
 
   @media (min-width: 660px) and (orientation: landscape) {
-    margin: 140px 30px 25px 40px;
+    margin: 0 30px 25px 40px;
   }
 `;

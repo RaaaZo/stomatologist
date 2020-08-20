@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const PageTitle = styled.h3`
-  margin: 80px 0 60px 0;
-  margin-right: 15%;
+  margin: 120px auto 10px auto;
   font-size: ${({ theme }) => theme.fontSize.m};
   color: ${({ theme }) => theme.text};
   text-align: right;

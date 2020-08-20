@@ -1,10 +1,10 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import Home from "Pages/Home";
-import Services from "Pages/Services";
-import Contact from "Pages/Contact";
-import Service from "Pages/Service";
+const Home = React.lazy(() => import("../Pages/Home"));
+const Services = React.lazy(() => import("../Pages/Services"));
+const Contact = React.lazy(() => import("../Pages/Contact"));
+const Service = React.lazy(() => import("../Pages/Service"));
 
 const Routes = () => {
   return (

@@ -5,6 +5,7 @@ export const StyledParagraph = styled.p`
   font-size: ${({ theme }) => theme.fontSize.xs};
   text-align: justify;
   text-align-last: center;
+  line-height: 2;
 
   @media (min-width: 768px) {
     max-width: 100%;
@@ -13,9 +14,5 @@ export const StyledParagraph = styled.p`
 
   @media (min-width: 1440px) {
     font-size: ${({ theme }) => theme.fontSize.m};
-  }
-
-  @media (min-width: 1800px) {
-    font-size: ${({ theme }) => theme.fontSize.l};
   }
 `;

@@ -1,12 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { StyledButtons } from "components/ServicesPage/ServicesButtons";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
-  justify-content: flex-end;
-  margin: 60px 10px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto;
 
   @media (min-width: 660px) and (orientation: landscape) {
     width: 60%;
@@ -23,9 +27,10 @@ const Wrapper = styled.div`
 `;
 
 const StyledParagraph = styled.p`
-  margin: 0 10%;
+  margin: 5% 10%;
   font-size: ${({ theme }) => theme.fontSize.xs};
   text-align: justify;
+  text-align-last: center;
 
   @media (min-width: 768px) {
     max-width: 60%;
@@ -47,6 +52,14 @@ const HomeText = ({ children }) => {
   return (
     <Wrapper>
       <StyledParagraph>{children}</StyledParagraph>
+      <StyledButtons
+        as={Link}
+        to="/services"
+        toService="true"
+        homeButton="true"
+      >
+        Zobacz nasze usługi
+      </StyledButtons>
     </Wrapper>
   );
 };

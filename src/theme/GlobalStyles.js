@@ -9,6 +9,10 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 
 body {
     max-width: 1920px;

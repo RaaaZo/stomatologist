@@ -1,101 +1,57 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
-import ServicesImg from "assets/images/services.jpg";
-import ServicesImg1 from "assets/images/services1.jpg";
-import ServicesImg2 from "assets/images/services2.jpg";
 
 import { ServicesWrapper } from "./ServicesWrapper";
 import { StyledImg } from "./StyledImg";
 import { StyledParagraph } from "components/shared/StyledParagraph/StyledParagraph";
 import { StyledButtons } from "./ServicesButtons";
 import ServicesAnimation from "./ServicesAnimation";
+import ServicesButtons from "components/ServicesPage/ServicesButtons";
+import { ButtonsWrapper } from "components/ServicesPage/ButtonsWrapper";
 
-const DUMMY_DATA = [
-  {
-    id: 1,
-    name: "Usługa1",
-    img: ServicesImg,
-    txt:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a doloribus optio numquam totam. Quis facilis natus ipsum! Maiores repudiandae dolor dolorum natus exercitationem, itaque iusto perferendis illo non necessitatibus!"
-  },
-  {
-    id: 2,
-    name: "Usługa2",
-    img: ServicesImg1,
-    txt:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a doloribus optio numquam totam. Quis facilis natus ipsum! Maiores repudiandae dolor dolorum natus exercitationem, itaque iusto perferendis illo non necessitatibus!"
-  },
-  {
-    id: 3,
-    name: "Usługa3",
-    img: ServicesImg2,
-    txt:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a doloribus optio numquam totam. Quis facilis natus ipsum! Maiores repudiandae dolor dolorum natus exercitationem, itaque iusto perferendis illo non necessitatibus!"
-  }
-];
+const ServicesData = ({ data }) => {
+  const [buttonId, setButtonId] = useState();
 
-const ServicesData = ({ firstData, secondData, thirdData }) => {
-  if (firstData) {
-    return (
-      <ServicesWrapper key={DUMMY_DATA[0].id}>
-        <StyledImg src={DUMMY_DATA[0].img} alt="zdjecie" />
-        <StyledParagraph>{DUMMY_DATA[0].txt}</StyledParagraph>
-        <StyledButtons
-          as={Link}
-          to={`/services/${DUMMY_DATA[0].name}`}
-          toService
-        >
-          Zobacz więcej
-        </StyledButtons>
-      </ServicesWrapper>
-    );
-  }
+  const singleService = data.filter(item => item.id === buttonId);
 
-  if (secondData) {
-    return (
-      <ServicesWrapper key={DUMMY_DATA[1].id}>
-        <StyledImg src={DUMMY_DATA[1].img} alt="zdjecie" />
-        <StyledParagraph>{DUMMY_DATA[1].txt}</StyledParagraph>
-        <StyledButtons
-          as={Link}
-          to={`/services/${DUMMY_DATA[1].name}`}
-          toService
-        >
-          Zobacz więcej
-        </StyledButtons>
-      </ServicesWrapper>
-    );
-  }
-
-  if (thirdData) {
-    return (
-      <ServicesWrapper key={DUMMY_DATA[2].id}>
-        <StyledImg src={DUMMY_DATA[2].img} alt="zdjecie" />
-        <StyledParagraph>{DUMMY_DATA[2].txt}</StyledParagraph>
-        <StyledButtons
-          as={Link}
-          to={`/services/${DUMMY_DATA[2].name}`}
-          toService
-        >
-          Zobacz więcej
-        </StyledButtons>
-      </ServicesWrapper>
-    );
-  }
+  const scrollTo = () => {
+    if (window.innerHeight > window.innerWidth) {
+      window.scrollTo(0, 600);
+    } else {
+      window.scrollTo(0, 200);
+    }
+  };
 
   return (
     <>
-      <ServicesAnimation />
+      <ButtonsWrapper>
+        <ServicesButtons
+          scrollTo={scrollTo}
+          setButtonId={setButtonId}
+          data={data}
+        />
+      </ButtonsWrapper>
+
+      {singleService.length === 0 ? (
+        <ServicesAnimation />
+      ) : (
+        singleService.map(item => (
+          <ServicesWrapper key={item.id}>
+            <StyledImg src={item.img} alt="zdjecie" />
+            <StyledParagraph>{item.shortDesc}</StyledParagraph>
+            <StyledButtons as={Link} to={`/services/${item.name}`} toService>
+              Zobacz więcej
+            </StyledButtons>
+          </ServicesWrapper>
+        ))
+      )}
     </>
   );
 };
 
 ServicesData.propTypes = {
-  firstData: PropTypes.bool.isRequired,
-  secondData: PropTypes.bool.isRequired,
-  thirdData: PropTypes.bool.isRequired
+  data: PropTypes.array.isRequired
 };
 
 export default ServicesData;
